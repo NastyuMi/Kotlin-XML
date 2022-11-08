@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".FirstActivity">
+
+    <TextView
+        android:id="@+id/textVien"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="  Hey) Well, let's get acquainted. My name is Nastya and this is my first app. You will be the first user)"
+        android:textColor="@color/maincolor"
+        android:textSize="25sp"
+        android:minHeight="50dp"/>
+
+    <EditText
+        android:id="@+id/editTextPersonName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/textVien"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="  enter your Name"
+        android:textColor="#5B000000"/>
+
+    <com.ncorti.slidetoact.SlideToActView
+        android:id="@+id/slider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextPersonName"
+        android:layout_marginTop="30dp"
+        android:elevation="1dp"
+        app:area_margin="2dp"
+        app:outer_color="#40AA7575"
+        android:background="@drawable/gradient"
+        app:inner_color="@color/white"
+        app:border_radius="200dp"
+        app:text="             SWIPE and let's move on"
+        app:text_style="bold"
+        app:text_size="20sp"
+        app:slider_height="80dp"
+        app:slider_locked="false" />
+
+</RelativeLayout>
