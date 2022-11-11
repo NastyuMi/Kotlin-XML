@@ -1,14 +1,13 @@
 package com.example.applicationwith3activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.widget.addTextChangedListener
+import androidx.core.view.isVisible
 import com.example.applicationwith3activity.databinding.ActivityFirstBinding
 import com.ncorti.slidetoact.SlideToActView
-import kotlinx.coroutines.runBlocking
 
 class FirstActivity : AppCompatActivity() {
 
@@ -22,7 +21,12 @@ class FirstActivity : AppCompatActivity() {
 
         binding.slider.onSlideCompleteListener = object: SlideToActView.OnSlideCompleteListener {
             override fun onSlideComplete (view: SlideToActView) {
-                Toast.makeText(this@FirstActivity,"Hi, " + binding.editTextPersonName.text, Toast.LENGTH_LONG) .show()
+                val userName = binding.editTextPersonName.text.toString()
+                val userGender = binding.switch1.isVisible
+                val userData = UserData(userName, userGender)
+                startActivity(Intent(this@FirstActivity,SecondActivity::class.java).apply{
+                    putExtra("userData",userData)
+                })
             }
         }
 
