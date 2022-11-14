@@ -27,8 +27,7 @@
         android:layout_below="@+id/textVien"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="  enter your Name"
-        android:textColor="#5B000000"/>
+        android:hint="enter your Name"/>
 
     <com.ncorti.slidetoact.SlideToActView
         android:id="@+id/slider"
@@ -47,5 +46,18 @@
         app:text_size="20sp"
         app:slider_height="80dp"
         app:slider_locked="false" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextPersonName"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="100dp"
+        android:textAlignment="center"
+        android:text="your name is ... ?" />
 
 </RelativeLayout>
