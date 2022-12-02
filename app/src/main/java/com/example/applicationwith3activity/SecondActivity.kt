@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.fragment.NavHostFragment
 import com.example.applicationwith3activity.databinding.ActivitySecondBinding
 
 class SecondActivity : AppCompatActivity() {
@@ -31,19 +32,20 @@ class SecondActivity : AppCompatActivity() {
         }
 
         binding.button3.setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
+            binding.fragment.alpha=1F
+            //startActivity(Intent(this, MainActivity::class.java))
         }
+
+        binding.fragment.alpha= 0F
 
         binding.button2.setOnClickListener(::buttonClick)
 
     }
 
     private fun buttonClick(v: View) {
-        //startActivity(Intent(this,MainFragmentActivity::class.java))
-        supportFragmentManager.beginTransaction()
-            .replace(binding.fragment.id, FirstFragment()) // place where to put fragment
-            .addToBackStack(null) // we want add fragment to backStack
-            .commit() // commit transaction
+        //binding.fragment.alpha=1F
+        startActivity(Intent(this,MainFragmentActivity::class.java))
+
     }
 
     override fun onDestroy(){
