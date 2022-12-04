@@ -19,7 +19,7 @@ class MainFragmentActivity : AppCompatActivity() {
 
         binding.button4.setOnClickListener {
 
-            binding.fragmentAVATARs.isClickable = true
+            //binding.fragmentAVATARs.isClickable = true
 
             var name : String? = ""
 
@@ -32,14 +32,16 @@ class MainFragmentActivity : AppCompatActivity() {
                 name = "It is ${it.name}"
                 if( it.man == true)
                 {
-                    age = "She is ${binding.editTextNumber.text} y.o."
-                    quote = "Her favorite quote: ${binding.editTextQuote.text}"
+                    age = "She is " + binding.editTextNumber.text.toString() + " y.o."
+                    quote = "Her favorite quote: " + binding.editTextQuote.text.toString()
                 } else
                 {
-                    age = "He is ${binding.editTextNumber.text} y.o."
-                    quote = "His favorite quote: ${binding.editTextQuote.text}"
+                    age = "He is " + binding.editTextNumber.text.toString() + " y.o."
+                    quote = "His favorite quote:  " + binding.editTextQuote.text.toString()
                 }
             }
+
+            binding.textView5.text= quote
 
             val navHostFragment = binding.fragmentINFO.getFragment<NavHostFragment>()
             navHostFragment.childFragmentManager.fragments[0].childFragmentManager

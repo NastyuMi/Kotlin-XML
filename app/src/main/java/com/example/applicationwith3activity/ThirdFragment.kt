@@ -32,15 +32,16 @@ class ThirdFragment : Fragment() {
 
         var quote : String? = ""
 
+        childFragmentManager.setFragmentResultListener("main_data",this){ _, bundle ->
+            name = bundle.getString("name")
+            age = bundle.getString("age")
+            quote = bundle.getString("quote")
+        }
+
         binding.root.setOnClickListener{
 
-            childFragmentManager.setFragmentResultListener("main_data",this){ _, bundle ->
-                name = bundle.getString("name")
-                age = bundle.getString("age")
-                quote = bundle.getString("quote")
-            }
-
-            findNavController().navigate(ThirdFragmentDirections.actionThirdFragmentToFourthFragment(name.toString(),age.toString(),quote.toString()))
+            binding.text.text=quote
+            //findNavController().navigate(ThirdFragmentDirections.actionThirdFragmentToFourthFragment(name.toString(),age.toString(),quote.toString()))
 
         }
 
