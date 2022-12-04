@@ -23,28 +23,35 @@ class SecondActivity : AppCompatActivity() {
             binding.textView3.text="${it.name}"
             if( it.man == true)
             {
-                binding.gender.text="you`re superwoman"
+                binding.gender.text = "you`re superwoman"
             } else
             {
-                binding.gender.text="you`re superman"
+                binding.gender.text = "you`re superman"
             }
 
         }
 
         binding.button3.setOnClickListener {
-            binding.fragment.alpha=1F
-            //startActivity(Intent(this, MainActivity::class.java))
+            /*val userData = intent.getParcelableExtra<UserData>("userData")
+            Intent(this,FirstFragment::class.java).apply {
+                putExtra("userData",userData)
+            }*/
+            binding.button2.isEnabled = false
+            binding.button3.isEnabled = false
+            binding.fragment.alpha = 1F
         }
 
-        binding.fragment.alpha= 0F
+        binding.fragment.alpha = 0F
 
         binding.button2.setOnClickListener(::buttonClick)
 
     }
 
     private fun buttonClick(v: View) {
-        //binding.fragment.alpha=1F
-        startActivity(Intent(this,MainFragmentActivity::class.java))
+        val userData = intent.getParcelableExtra<UserData>("userData")
+        startActivity(Intent(this,MainFragmentActivity::class.java).apply {
+            putExtra("userData",userData)
+        })
 
     }
 

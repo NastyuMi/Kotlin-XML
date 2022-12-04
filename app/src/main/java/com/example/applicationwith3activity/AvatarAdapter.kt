@@ -1,51 +1,52 @@
 package com.example.applicationwith3activity
 
+import android.content.Context
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.applicationwith3activity.databinding.RecycleRowBinding
 
-class AvatarAdapter
-/*(
-    private val itemList : List<Pair<Int?, String?>>,
-    private val onItemClick : (position: Int) -> Unit) :
-    RecyclerView.Adapter<AvatarAdapter.AvatarHolder>() {
+class AvatarAdapter(
+    private val context: Context?,
+    private val fragment: SecondFragment,
+    private val itemList: List<Pair<Int, String>>,
+    private var onItemClick : (position : Int) -> Unit
+) : RecyclerView.Adapter<AvatarAdapter.ViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AvatarHolder {
-        val itemBinding = RecycleRowBinding.inflate(LayoutInflater.from(parent.context))
-        return AvatarHolder(itemBinding, onItemClick)
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        fun bind(avatarImage: Int, avatarName: String ) {
+            itemView.findViewById<TextView>(R.id.textView10).text = avatarName
+
+            val imageView = itemView.findViewById<ImageView>(R.id.imageView2)
+
+            Glide.with(fragment)
+                .load(avatarImage)
+                .into(imageView)
+        }
+
     }
 
-    override fun onBindViewHolder(holder: AvatarHolder, position: Int) {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        return ViewHolder(LayoutInflater.from(context).inflate(R.layout.recycle_row, parent, false))
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val avatarData = itemList[position]
+
         holder.bind(avatarData.first, avatarData.second)
+
+        holder.itemView.setOnClickListener {
+            onItemClick?.invoke(avatarData.first)
+        }
     }
 
     override fun getItemCount(): Int {
         return itemList.size
     }
 
-    class AvatarHolder(
-        private val itemList : List<Pair<Int?, String?>>,
-        private val onItemClick : (position: Int) -> Unit) :
-        RecyclerView.ViewHolder(itemBinding.root) {
-        init {
-            itemView.setOnClickListener{
-                onItemClick(adapterPosition)
-            }
-        }
 
-        fun bind(avatarFoto : Int?, avatarName : String?){
-            Glide.with(itemView)
-                .load(avatarFoto)
-                .centerCrop()
-                .placeholder(itemBinding.iVAvatarPicture.drawble)
-                .error(android.R.drawable.stat_notify_sync)
-                .fallBack(android.R.drawable.ic_menu_close_clear_cancel)
-                .info(itemBinding.iVAvatarPicture)
-        }
 
-    }
-
-}*/
+}

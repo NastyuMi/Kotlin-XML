@@ -5,14 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.applicationwith3activity.databinding.FragmentSecondBinding
 
 class SecondFragment : Fragment() {
 
     private lateinit var binding: FragmentSecondBinding
+    private lateinit var avatarAdapter: AvatarAdapter
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -22,6 +22,7 @@ class SecondFragment : Fragment() {
 
         return binding.root
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -37,17 +38,14 @@ class SecondFragment : Fragment() {
 
         val save_img = R.drawable.girl
 
-        /*val saveAvatar = AvatarAdapter(avatarData){
-            position -> save_img = avatarData[position].first
-        }
+        avatarAdapter = AvatarAdapter(context, this, avatarData, { position ->
+            binding.button5.text= avatarData[position].second
+        })
 
-        binding.recyclerView.layoutManager = LinearLayoutManager(this)
-        binding.recyclerView.adapter = saveAvatar
-        */
+        binding.recyclerView.adapter = avatarAdapter
+        binding.recyclerView.layoutManager = LinearLayoutManager(context)
 
-         binding.root.setOnClickListener{
-            binding.button5.text = "done"
-         }
+
     }
 
 }

@@ -41,7 +41,7 @@ class MainFragmentActivity : AppCompatActivity() {
                 }
             }
 
-            binding.textView5.text= quote
+            binding.textView5.text = quote
 
             val navHostFragment = binding.fragmentINFO.getFragment<NavHostFragment>()
             navHostFragment.childFragmentManager.fragments[0].childFragmentManager
