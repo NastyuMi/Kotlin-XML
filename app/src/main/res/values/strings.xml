@@ -2,6 +2,12 @@
     <string name="app_name">Nastyuhina App</string>
     <string name="user_name">Vasil</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="fragment">Nice!\n Now we can get acquainted.\n p.s. it is my first fragment</string>
+    <string name="main_fragment">Nice!\n Now we can get acquainted.\n p.s. it is my first fragment</string>
     <string name="restart_fragment">You really wont start again?</string>
+    <string name="third_fragment">There will be information about you</string>
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="name_user">It`s (name)</string>
+    <string name="age_user">She`s/He`s (num) y.o.</string>
+    <string name="quote_user">Her/His favorite quote:</string>
+
 </resources>

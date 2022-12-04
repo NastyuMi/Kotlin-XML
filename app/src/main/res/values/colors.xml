@@ -5,6 +5,7 @@
     <color name="purple_700">#5E4E6E</color>
     <color name="maincolor">#8054BF</color>
     <color name="maincolorfragment">#728054BF</color>
+    <color name="not_maincolorfragment">#725E3E8C</color>
     <color name="secondcolor">#B08BE6</color>
     <color name="teal_200">#930073</color>
     <color name="teal_700">#680243</color>

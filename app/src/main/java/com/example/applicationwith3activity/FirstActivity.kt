@@ -22,7 +22,7 @@ class FirstActivity : AppCompatActivity() {
         binding.slider.onSlideCompleteListener = object: SlideToActView.OnSlideCompleteListener {
             override fun onSlideComplete (view: SlideToActView) {
                 val userName = binding.editTextPersonName.text.toString()
-                val userGender = binding.switch1.isVisible
+                val userGender = binding.switch1.isChecked
                 val userData = UserData(userName, userGender)
                 startActivity(Intent(this@FirstActivity,SecondActivity::class.java).apply{
                     putExtra("userData",userData)

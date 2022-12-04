@@ -5,7 +5,8 @@ import android.os.Parcelable
 
 data class UserData(
     val name : String,
-    val man : Boolean
+    val man : Boolean,
+
 ) : Parcelable{
     constructor(parcel: Parcel) : this(
         parcel.readString().toString(),

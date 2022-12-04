@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph_2"
+    app:startDestination="@id/thirdFragment">
+    <fragment
+        android:id="@+id/thirdFragment"
+        android:name="com.example.applicationwith3activity.ThirdFragment"
+        android:label="fragment_third"
+        tools:layout="@layout/fragment_third" >
+        <action
+            android:id="@+id/action_thirdFragment_to_fourthFragment"
+            app:destination="@id/fourthFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fourthFragment"
+        android:name="com.example.applicationwith3activity.FourthFragment"
+        android:label="fragment_fourth"
+        tools:layout="@layout/fragment_fourth">
+        <argument
+            android:name="name"
+            app:argType="string"/>
+        <argument
+            android:name="age"
+            app:argType="string"/>
+        <argument
+            android:name="quote"
+            app:argType="string"/>
+    </fragment>
+
+</navigation>
