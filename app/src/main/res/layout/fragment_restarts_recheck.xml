@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#B41F1E20"
-    tools:context=".FirstFragment">
+    tools:context=".RestartsRecheckFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -30,7 +30,7 @@
         android:layout_marginTop="-30dp"/>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonYES"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

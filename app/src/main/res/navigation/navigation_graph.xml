@@ -3,18 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_graph"
-    app:startDestination="@id/firstFragment">
+    app:startDestination="@id/restartsRecheckFragment">
     <fragment
-        android:id="@+id/firstFragment"
-        android:name="com.example.applicationwith3activity.FirstFragment"
+        android:id="@+id/restartsRecheckFragment"
+        android:name="com.example.applicationwith3activity.RestartsRecheckFragment"
         android:label="fragment_first"
-        tools:layout="@layout/fragment_first" >
+        tools:layout="@layout/fragment_restarts_recheck" >
         <action
-            android:id="@+id/action_firstFragment_to_mainActivity"
+            android:id="@+id/action_restartsRecheckFragment_to_restartOrNextActivity"
+            app:destination="@id/restartOrNextActivity" />
+        <action
+            android:id="@+id/action_restartsRecheckFragment_to_mainActivity"
             app:destination="@id/mainActivity" />
-        <action
-            android:id="@+id/action_firstFragment_to_secondActivity"
-            app:destination="@id/secondActivity" />
     </fragment>
     <activity
         android:id="@+id/mainActivity"
@@ -22,8 +22,8 @@
         android:label="activity_main"
         tools:layout="@layout/activity_main" />
     <activity
-        android:id="@+id/secondActivity"
-        android:name="com.example.applicationwith3activity.SecondActivity"
+        android:id="@+id/restartOrNextActivity"
+        android:name="com.example.applicationwith3activity.RestartOrNextActivity"
         android:label="activity_second"
-        tools:layout="@layout/activity_second" />
+        tools:layout="@layout/activity_restart_or_next" />
 </navigation>

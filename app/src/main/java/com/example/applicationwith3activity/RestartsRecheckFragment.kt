@@ -1,24 +1,23 @@
 package com.example.applicationwith3activity
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.example.applicationwith3activity.databinding.FragmentFirstBinding
+import com.example.applicationwith3activity.databinding.FragmentRestartsRecheckBinding
 
-class FirstFragment : Fragment() {
+class RestartsRecheckFragment : Fragment() {
 
-    private lateinit var binding: FragmentFirstBinding
+    private lateinit var binding: FragmentRestartsRecheckBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?): View {
 
-        binding = FragmentFirstBinding.inflate(layoutInflater)
+        binding = FragmentRestartsRecheckBinding.inflate(layoutInflater)
 
         return binding.root
     }
@@ -27,14 +26,14 @@ class FirstFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        binding.button.setOnClickListener(){
+        binding.buttonYES.setOnClickListener(){
            // binding.button.text="нажалась"
-            val action = FirstFragmentDirections.actionFirstFragmentToMainActivity()
+            val action = RestartsRecheckFragmentDirections.actionRestartsRecheckFragmentToMainActivity()
             findNavController().navigate(action)
         }
 
         binding.buttonNO.setOnClickListener {
-            val action = FirstFragmentDirections.actionFirstFragmentToSecondActivity()
+            val action = RestartsRecheckFragmentDirections.actionRestartsRecheckFragmentToRestartOrNextActivity()
             findNavController().navigate(action)
         }
     }

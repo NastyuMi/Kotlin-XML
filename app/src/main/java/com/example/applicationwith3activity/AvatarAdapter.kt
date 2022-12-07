@@ -11,16 +11,16 @@ import com.bumptech.glide.Glide
 
 class AvatarAdapter(
     private val context: Context?,
-    private val fragment: SecondFragment,
+    private val fragment: UseRecycleViewForAvatarsFragment,
     private val itemList: List<Pair<Int, String>>,
     private var onItemClick : (position : Int) -> Unit
 ) : RecyclerView.Adapter<AvatarAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(avatarImage: Int, avatarName: String ) {
-            itemView.findViewById<TextView>(R.id.textView10).text = avatarName
+            itemView.findViewById<TextView>(R.id.text_nameOfAvatars).text = avatarName
 
-            val imageView = itemView.findViewById<ImageView>(R.id.imageView2)
+            val imageView = itemView.findViewById<ImageView>(R.id.image_avatars)
 
             Glide.with(fragment)
                 .load(avatarImage)

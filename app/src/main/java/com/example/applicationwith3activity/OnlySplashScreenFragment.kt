@@ -7,18 +7,18 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.setFragmentResultListener
 import androidx.navigation.fragment.findNavController
-import com.example.applicationwith3activity.databinding.FragmentThirdBinding
+import com.example.applicationwith3activity.databinding.FragmentOnlySplashScreenBinding
 
-class ThirdFragment : Fragment() {
+class OnlySplashScreenFragment : Fragment() {
 
-    private lateinit var binding: FragmentThirdBinding
+    private lateinit var binding: FragmentOnlySplashScreenBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?): View {
 
-        binding = FragmentThirdBinding.inflate(layoutInflater)
+        binding = FragmentOnlySplashScreenBinding.inflate(layoutInflater)
 
         return binding.root
     }
@@ -42,13 +42,22 @@ class ThirdFragment : Fragment() {
         binding.root.setOnClickListener {
             if (name == "" ){
 
-                binding.text.text = binding.text.text
+                binding.textInformationalAboutUser.text = binding.textInformationalAboutUser.text
 
             }
             else{
 
-                findNavController().navigate(ThirdFragmentDirections.actionThirdFragmentToFourthFragment(name.toString(),age.toString(),quote.toString()))
-
+                setFragmentResultListener("avatar_result") { requestKey, bundle ->
+                    val image =  bundle.getInt("img", 45)
+                    findNavController().navigate(
+                        OnlySplashScreenFragmentDirections.actionOnlySplashScreenFragmentToMiniUserProfileFragment(
+                            name.toString(),
+                            age.toString(),
+                            quote.toString(),
+                            image
+                        )
+                    )
+                }
             }
 
         }

@@ -21,23 +21,23 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val amimator: Animation = AnimationUtils.loadAnimation(this, R.anim.first_anim)
-        binding.textView2.startAnimation(amimator)
+        binding.HI.startAnimation(amimator)
 
-        binding.button.setOnClickListener(::buttonClick)
+        binding.buttonInMainAct.setOnClickListener(::buttonClick)
 
         /*
         не уверенна, что оно корректно сработает
         хочется, чтобы при долгом нажатии на HI! повторилась анимация
         */
-        binding.textView2.setOnLongClickListener (object : View.OnLongClickListener {
+        binding.textWelcomeMainAct.setOnLongClickListener (object : View.OnLongClickListener {
             override fun onLongClick(p0: View?): Boolean {
-                binding.textView2.startAnimation(amimator)
+                binding.textWelcomeMainAct.startAnimation(amimator)
                 return true
             }
         })
     }
 
     private fun buttonClick(v: View) {
-        startActivity(Intent(this,FirstActivity::class.java))
+        startActivity(Intent(this,EditNameWithSliderActivity::class.java))
     }
 }

@@ -19,7 +19,7 @@ class MainFragmentActivity : AppCompatActivity() {
 
         binding.fragmentAVATARs.isActivated = false
 
-        binding.button4.setOnClickListener {
+        binding.buttonForSendAgeAndQuote.setOnClickListener {
 
             binding.fragmentAVATARs.isActivated =  true
 
@@ -44,7 +44,7 @@ class MainFragmentActivity : AppCompatActivity() {
             }
 
             val navHostFragment = binding.fragmentINFO.getFragment<NavHostFragment>()
-            val firstTrans = navHostFragment.childFragmentManager.fragments[0] as ThirdFragment
+            val firstTrans = navHostFragment.childFragmentManager.fragments[0] as OnlySplashScreenFragment
             firstTrans.childFragmentManager
                 .setFragmentResult(
                     "main_data",

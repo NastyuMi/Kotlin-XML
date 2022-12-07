@@ -9,7 +9,7 @@
 
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/text_titleMFFActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="75dp"
@@ -24,7 +24,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/text_moreInformAboutUsers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -33,10 +33,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/text_titleMFFActivity" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/text_howOld"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -45,7 +45,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.12"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        app:layout_constraintTop_toBottomOf="@+id/text_moreInformAboutUsers" />
 
     <EditText
         android:id="@+id/editTextNumber"
@@ -58,10 +58,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.153"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        app:layout_constraintTop_toBottomOf="@+id/text_howOld" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/text_usersFavouriteQuote"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -82,10 +82,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.166"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        app:layout_constraintTop_toBottomOf="@+id/text_usersFavouriteQuote" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/button_forSendAgeAndQuote"
         android:layout_width="170dp"
         android:layout_height="48dp"
         android:layout_marginTop="20dp"
@@ -98,7 +98,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentAVATARs"
-        android:name="com.example.applicationwith3activity.SecondFragment"
+        android:name="com.example.applicationwith3activity.UseRecycleViewForAvatarsFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginLeft="10dp"
@@ -106,9 +106,9 @@
         android:clickable="false"
         app:layout_constraintBottom_toTopOf="@id/fragmentINFO"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/textView7"
-        app:layout_constraintTop_toBottomOf="@id/textView5"
-        tools:layout="@layout/fragment_second" />
+        app:layout_constraintStart_toEndOf="@id/text_moreInformAboutUsers"
+        app:layout_constraintTop_toBottomOf="@id/text_titleMFFActivity"
+        tools:layout="@layout/fragment_use_recycle_view_for_avatars" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentINFO"
@@ -120,7 +120,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4"
+        app:layout_constraintTop_toBottomOf="@+id/button_forSendAgeAndQuote"
         app:navGraph="@navigation/navigation_graph_2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
