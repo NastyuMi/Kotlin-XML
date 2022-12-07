@@ -17,9 +17,11 @@ class MainFragmentActivity : AppCompatActivity() {
         binding= ActivityMainFirstFragmentBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.fragmentAVATARs.isActivated = false
+
         binding.button4.setOnClickListener {
 
-            //binding.fragmentAVATARs.isClickable = true
+            binding.fragmentAVATARs.isActivated =  true
 
             var name : String? = ""
 
@@ -41,10 +43,9 @@ class MainFragmentActivity : AppCompatActivity() {
                 }
             }
 
-            binding.textView5.text = quote
-
             val navHostFragment = binding.fragmentINFO.getFragment<NavHostFragment>()
-            navHostFragment.childFragmentManager.fragments[0].childFragmentManager
+            val firstTrans = navHostFragment.childFragmentManager.fragments[0] as ThirdFragment
+            firstTrans.childFragmentManager
                 .setFragmentResult(
                     "main_data",
                     bundleOf("name" to name,

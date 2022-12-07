@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.applicationwith3activity.databinding.FragmentSecondBinding
 
@@ -36,10 +37,13 @@ class SecondFragment : Fragment() {
             Pair(R.drawable.dog,"dog")
         )
 
-        val save_img = R.drawable.girl
+       // val save_img = R.drawable.dog
 
         avatarAdapter = AvatarAdapter(context, this, avatarData, { position ->
+
             binding.button5.text= avatarData[position].second
+
+            activity?.supportFragmentManager?.setFragmentResult("avatar_result", bundleOf("img" to avatarData[position].first))
         })
 
         binding.recyclerView.adapter = avatarAdapter

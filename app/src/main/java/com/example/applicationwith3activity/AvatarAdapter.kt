@@ -39,7 +39,7 @@ class AvatarAdapter(
         holder.bind(avatarData.first, avatarData.second)
 
         holder.itemView.setOnClickListener {
-            onItemClick?.invoke(avatarData.first)
+            onItemClick?.invoke(position)
         }
     }
 
