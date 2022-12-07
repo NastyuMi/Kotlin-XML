@@ -10,8 +10,8 @@
 
     <ImageView
         android:id="@+id/image_avatars"
-        android:layout_width="0dp"
-        android:layout_height="100dp"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
         android:layout_weight="1.5"
         app:srcCompat="@drawable/ic_launcher_foreground"
         tools:ignore="ContentDescription"/>
@@ -24,7 +24,7 @@
         android:layout_gravity="center_vertical"
         android:layout_marginLeft="10dp"
         android:textColor="@color/black"
-        android:textSize="8pt"
+        android:textSize="10pt"
         android:text="image name" />
 
 </LinearLayout>
