@@ -8,6 +8,7 @@ android {
     namespace 'com.example.applicationwith3activity'
     compileSdk 32
 
+
     defaultConfig {
         applicationId "com.example.applicationwith3activity"
         minSdk 21

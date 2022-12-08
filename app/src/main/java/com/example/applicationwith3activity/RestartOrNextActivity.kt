@@ -44,7 +44,7 @@ class RestartOrNextActivity : AppCompatActivity() {
 
     private fun buttonClick(v: View) {
         val userData = intent.getParcelableExtra<UserData>("userData")
-        startActivity(Intent(this,MainFragmentActivity::class.java).apply {
+        startActivity(Intent(this,LoadingActivity::class.java).apply {
             putExtra("userData",userData)
         })
 
