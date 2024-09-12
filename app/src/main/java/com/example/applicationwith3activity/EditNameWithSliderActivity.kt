@@ -5,26 +5,25 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.isVisible
-import com.example.applicationwith3activity.databinding.ActivityFirstBinding
+import com.example.applicationwith3activity.databinding.ActivityEditNameWithSliderBinding
 import com.ncorti.slidetoact.SlideToActView
 
-class FirstActivity : AppCompatActivity() {
+class EditNameWithSliderActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityFirstBinding
+    private lateinit var binding: ActivityEditNameWithSliderBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-        binding = ActivityFirstBinding.inflate(layoutInflater)
+        binding = ActivityEditNameWithSliderBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.slider.onSlideCompleteListener = object: SlideToActView.OnSlideCompleteListener {
             override fun onSlideComplete (view: SlideToActView) {
                 val userName = binding.editTextPersonName.text.toString()
-                val userGender = binding.switch1.isVisible
+                val userGender = binding.switchManWoman.isChecked
                 val userData = UserData(userName, userGender)
-                startActivity(Intent(this@FirstActivity,SecondActivity::class.java).apply{
+                startActivity(Intent(this@EditNameWithSliderActivity,RestartOrNextActivity::class.java).apply{
                     putExtra("userData",userData)
                 })
             }
@@ -42,7 +41,7 @@ class FirstActivity : AppCompatActivity() {
             }
 
             override fun afterTextChanged(s: Editable) {
-                binding.textView6.setText("if you`re $s swipe below\uD83D\uDC47\uD83C\uDFFC")
+                binding.textAboveSlider.setText("if you`re $s swipe below\uD83D\uDC47\uD83C\uDFFC")
 
             }
 

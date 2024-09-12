@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/restartsRecheckFragment">
+    <fragment
+        android:id="@+id/restartsRecheckFragment"
+        android:name="com.example.applicationwith3activity.RestartsRecheckFragment"
+        android:label="fragment_first"
+        tools:layout="@layout/fragment_restarts_recheck" >
+        <action
+            android:id="@+id/action_restartsRecheckFragment_to_restartOrNextActivity"
+            app:destination="@id/restartOrNextActivity" />
+        <action
+            android:id="@+id/action_restartsRecheckFragment_to_mainActivity"
+            app:destination="@id/mainActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.applicationwith3activity.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+    <activity
+        android:id="@+id/restartOrNextActivity"
+        android:name="com.example.applicationwith3activity.RestartOrNextActivity"
+        android:label="activity_second"
+        tools:layout="@layout/activity_restart_or_next" />
+</navigation>

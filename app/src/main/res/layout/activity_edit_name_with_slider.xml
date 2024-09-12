@@ -5,10 +5,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FirstActivity">
+    tools:context=".EditNameWithSliderActivity">
 
     <TextView
-        android:id="@+id/textVien"
+        android:id="@+id/text_Hi_inFirstActivity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -23,10 +23,10 @@
         tools:layout_editor_absoluteX="0dp" />
 
     <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/switch1"
+        android:id="@+id/switch_Man_Woman"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textVien"
+        android:layout_below="@+id/text_Hi_inFirstActivity"
         android:layout_centerHorizontal="true"
         android:height="21pt"
         android:minHeight="20dp"
@@ -49,7 +49,7 @@
         android:textColor="@color/woman"
         android:textSize="15pt"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/switch1"
+        app:layout_constraintStart_toEndOf="@+id/switch_Man_Woman"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.36" />
 
@@ -57,16 +57,16 @@
         android:id="@+id/man"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textVien"
+        android:layout_below="@+id/text_Hi_inFirstActivity"
         android:layout_marginEnd="2pt"
-        android:layout_toStartOf="@+id/switch1"
+        android:layout_toStartOf="@+id/switch_Man_Woman"
         android:minHeight="20dp"
         android:text="Man"
         android:textAlignment="center"
         android:textColor="@color/man"
         android:textSize="15pt"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/switch1"
+        app:layout_constraintEnd_toStartOf="@+id/switch_Man_Woman"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.359" />
 
@@ -74,27 +74,27 @@
         android:id="@+id/editTextPersonName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/switch1"
+        android:layout_below="@+id/switch_Man_Woman"
         android:layout_marginTop="2pt"
         android:ems="10"
         android:hint="enter your name"
         android:inputType="textPersonName"
         android:minHeight="22pt"
-        app:layout_constraintTop_toBottomOf="@+id/switch1"
+        app:layout_constraintTop_toBottomOf="@+id/switch_Man_Woman"
         tools:layout_editor_absoluteX="0dp" />
 
     <com.ncorti.slidetoact.SlideToActView
         android:id="@+id/slider"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView6"
+        android:layout_below="@+id/text_above_slider"
         android:layout_marginTop="2pt"
         android:background="@drawable/gradient"
         android:elevation="1dp"
         app:area_margin="2dp"
         app:border_radius="100pt"
         app:inner_color="@color/white"
-        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/text_above_slider"
         app:outer_color="#40AA7575"
         app:slider_height="30pt"
         app:slider_locked="false"
@@ -104,7 +104,7 @@
         tools:layout_editor_absoluteX="0dp" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/text_above_slider"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/editTextPersonName"

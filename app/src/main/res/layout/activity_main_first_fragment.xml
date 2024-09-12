@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/back"
+    tools:context=".MainFragmentActivity">
+
+
+    <TextView
+        android:id="@+id/text_titleMFFActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/main_fragment"
+        android:textAlignment="center"
+        android:textColor="@color/maincolor"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <TextView
+        android:id="@+id/text_moreInformAboutUsers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Add more information..."
+        android:textSize="8pt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_titleMFFActivity" />
+
+    <TextView
+        android:id="@+id/text_howOld"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="How old are you?"
+        android:textSize="6pt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_moreInformAboutUsers" />
+
+    <EditText
+        android:id="@+id/editTextNumber"
+        android:layout_width="170dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:inputType="number"
+        android:hint="I'm 20, and you?..)"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.153"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_howOld" />
+
+    <TextView
+        android:id="@+id/text_usersFavouriteQuote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Enter your favorite quote:"
+        android:textSize="6pt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.146"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />
+
+    <EditText
+        android:id="@+id/editTextQuote"
+        android:layout_width="189dp"
+        android:layout_height="108dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="“Your time is limited, so don’t waste it living someone else’s life.” – Steve Jobs."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.166"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_usersFavouriteQuote" />
+
+    <Button
+        android:id="@+id/button_forSendAgeAndQuote"
+        android:layout_width="170dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:text="activate avatar selection"
+        android:textSize="3.5pt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.153"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextQuote" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentAVATARs"
+        android:name="com.example.applicationwith3activity.UseRecycleViewForAvatarsFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:clickable="false"
+        app:layout_constraintBottom_toTopOf="@id/fragmentINFO"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/text_moreInformAboutUsers"
+        app:layout_constraintTop_toBottomOf="@id/text_titleMFFActivity"
+        tools:layout="@layout/fragment_use_recycle_view_for_avatars" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentINFO"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clickable="false"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_forSendAgeAndQuote"
+        app:navGraph="@navigation/navigation_graph_2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

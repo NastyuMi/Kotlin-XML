@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph_2"
+    app:startDestination="@id/onlySplashScreenFragment">
+    <fragment
+        android:id="@+id/onlySplashScreenFragment"
+        android:name="com.example.applicationwith3activity.OnlySplashScreenFragment"
+        android:label="fragment_third"
+        tools:layout="@layout/fragment_only_splash_screen" >
+        <action
+            android:id="@+id/action_onlySplashScreenFragment_to_miniUserProfileFragment"
+            app:destination="@id/miniUserProfileFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/miniUserProfileFragment"
+        android:name="com.example.applicationwith3activity.MiniUserProfileFragment"
+        android:label="fragment_fourth"
+        tools:layout="@layout/fragment_mini_user_profile">
+        <argument
+            android:name="name"
+            app:argType="string"/>
+        <argument
+            android:name="age"
+            app:argType="string"/>
+        <argument
+            android:name="quote"
+            app:argType="string"/>
+        <argument
+            android:name="image"
+            app:argType="integer"/>
+    </fragment>
+
+</navigation>

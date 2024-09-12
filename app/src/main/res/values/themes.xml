@@ -13,6 +13,7 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
     <style name="MySwitch" parent="Theme.AppCompat.Light">
         <!-- активное состояние (30% прозрачности для фона) -->
         <item name="colorControlActivated">@color/woman</item>
@@ -23,4 +24,13 @@
         <item name="border_radius">50dp</item>
 
     </style>
+
+    <style name="Theme.ApplicationWith3Activity.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.ApplicationWith3Activity.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.ApplicationWith3Activity.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
